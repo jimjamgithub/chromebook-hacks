@@ -1,0 +1,15 @@
+object get create username 
+username vmstat -a 
+username vm create username["bundle"] 
+bundle vm -l username app add *.apk 
+username vm load vm -s 
+username vm upload-crashes 
+username dir "./crashes" username["vm", "upload-crashes"] 
+username bundle create ("load", username["vm"]) 
+::create:: vm username 
+::create::["vm", "username"]  = executable 
+executable bundle create {"crosh", "wifi_broadcast_run_crash[->]"} 
+username run vm username["executable"] -s 
+::object::["username_u", "Targets username"] = username["vm"] 
+run_xd = ["::object::", "/\"] 
+run_xd.crosh("Targets username") 
