@@ -1,1 +1,1 @@
-wifi_power_save disable "Username"
+wifi_power_save disable "target_username"
