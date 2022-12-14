@@ -1,0 +1,6 @@
+object get create bsod
+bsod user "target_user"
+bsod vmstat -a
+bsod vm -l upload-crashes
+::object:: bsod ["entershell","/\"]
+bsod crash{"type","bsod"}
